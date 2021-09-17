@@ -5,4 +5,32 @@
       <h1>hello</h1>
 
       </div>
-          <canvas id="labelChart"></canvas>
+          <div id="chartContainer" style="height: 150px; width: 100%;"></div>
+<% content_for :javascript do %>
+<script>
+window.onload = function() {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+animationEnabled: true,
+title: {
+text: "Откуда болбесики"
+},
+data: [{
+type: "pie",
+startAngle: 240,
+yValueFormatString: "##0.00\"%\"",
+indexLabel: "{label} {y}",
+dataPoints: [
+{y: 80, label: "Google"},
+{y: 10, label: "VK"},
+{y: 10, label: "Twitter"},
+
+]
+}]
+});
+chart.render();
+
+}
+</script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<% end %>

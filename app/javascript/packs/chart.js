@@ -33,3 +33,8 @@ var myChart = new Chart(ctx, {
         }
     }
 });
+
+
+
+
+alert("hello");
